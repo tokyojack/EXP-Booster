@@ -1,5 +1,5 @@
 <h2  align="center">EXP-Booster</h2>
-<p  align="center">A small Bukkit plugin that I made for free for a friend</p>
+<p  align="center">A Bukkit plugin that I made for free for a friend</p>
 
 <br/>
 
