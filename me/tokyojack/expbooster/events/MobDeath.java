@@ -6,17 +6,13 @@ import org.bukkit.event.entity.EntityDeathEvent;
 
 import me.tokyojack.expbooster.Core;
 
-public class MobDie implements Listener {
-
-	public MobDie(Core core) {
-		// TODO Auto-generated constructor stub
-	}
+public class MobDeath implements Listener {
 
 	@EventHandler
-	public void onDeath(EntityDeathEvent event) {
-		int amount = Core.getPlugin().getCurrentEXPMultiplier();
+	public void onEntityDeath(EntityDeathEvent event) {
+		int currentEXPMultiplier = Core.getPlugin().getCurrentEXPMultiplier();
 
-		if (amount == 1)
+		if (currentEXPMultiplier == 1)
 			return;
 
 		event.setDroppedExp(event.getDroppedExp() * amount);

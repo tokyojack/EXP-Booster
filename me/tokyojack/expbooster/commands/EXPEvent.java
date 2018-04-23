@@ -14,6 +14,8 @@ public class EXPEvent extends Kommand {
 
 	@Override
 	public boolean execute(CommandSender commandSender, String label, String[] args) {
+		
+		// If the player is not op'ed
 		if (!commandSender.isOp()) {
 			commandSender.sendMessage(ChatColor.RED + "You cannot do that command!");
 			return false;
@@ -24,9 +26,11 @@ public class EXPEvent extends Kommand {
 					ChatColor.GREEN + "Current EXP multiplier: " + Core.getPlugin().getCurrentEXPMultiplier());
 			return true;
 		}
+		
+		int newMultiplierAmount = Integer.parseInt(args[0]);
 
-		Core.getPlugin().setCurrentEXPMultiplier(Integer.parseInt(args[0]));
-		commandSender.sendMessage(ChatColor.GREEN + "EXP multiplier set to: " + args[0]);
+		Core.getPlugin().setCurrentEXPMultiplier(newMultiplierAmount);
+		commandSender.sendMessage(ChatColor.GREEN + "EXP multiplier set to: " + newMultiplierAmount);
 
 		return true;
 	}
